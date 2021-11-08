@@ -102,3 +102,8 @@ dist
 
 # TernJS port file
 .tern-port
+
+/multivocal-example-voice.iml
+/multivocal-example-voice.ipr
+/multivocal-example-voice.iws
+/.firebaserc
