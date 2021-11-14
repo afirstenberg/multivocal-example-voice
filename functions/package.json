@@ -1,5 +1,6 @@
 {
   "name": "multivocal-example-voice",
+  "version": "0.18.0",
   "description": "An example for using different voices using multivocal and SpeechMarkdown",
   "scripts": {
     "serve": "firebase emulators:start --only functions",
