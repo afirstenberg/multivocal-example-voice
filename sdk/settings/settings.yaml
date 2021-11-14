@@ -1,0 +1,6 @@
+defaultLocale: en
+localizedSettings:
+  displayName: multivocal example voice
+  pronunciation: multivocal example voice
+  voice: female_1
+projectId: your-project-id-here
