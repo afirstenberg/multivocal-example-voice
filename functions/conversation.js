@@ -15,9 +15,13 @@ const conf = {
         "Action.requestSupervisor": [
           {
             Base: {Set: true},
-            NextNode: "."
+            NextNode: ".",
+            Template: {
+              VoiceRequested: "{{Voice.manager}}"
+            }
           },
-          "(One moment.)[voice:'{{Voice.Name}}'] [500ms]"
+          "(One moment.)[voice:'{{Voice.Name}}'] [500ms]",
+          "(Please hang on a moment.)[voice:'{{Voice.Name}}'] [750ms]",
         ],
         "Action.whoIsBoss": [
           "My supervisor is {{Voice.manager}}.",
@@ -46,33 +50,22 @@ const conf = {
   }
 }
 
-function noManager( env ){
+function handleNoManager( env ){
   env.Outent = "Error.noManager";
   return Multivocal.handleDefault( env );
 }
 
-function handleRequestSupervisor( env ){
+function handleManager( env ){
   const manager = env.Voice.manager;
   if( !manager ){
-    return noManager( env );
-  }
-
-  env.VoiceRequested = manager;
-  return Multivocal.handleDefault( env )
-    .then( env => Multivocal.loadVoice( env ) );
-}
-
-function handleWhoIsBoss( env ){
-  const manager = env.Voice.manager;
-  if( !manager ){
-    return noManager( env );
+    return handleNoManager( env );
   }
 
   return Multivocal.handleDefault( env );
 }
 
 exports.init = function(){
-  Multivocal.addActionHandler( "requestSupervisor", handleRequestSupervisor );
-  Multivocal.addActionHandler( "whoIsBoss", handleWhoIsBoss );
+  Multivocal.addActionHandler( "requestSupervisor", handleManager );
+  Multivocal.addActionHandler( "whoIsBoss", handleManager );
   new Multivocal.Config.Simple( conf );
 }
