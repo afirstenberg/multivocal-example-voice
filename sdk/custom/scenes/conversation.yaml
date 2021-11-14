@@ -1,0 +1,12 @@
+intentEvents:
+- handler:
+    webhookHandler: requestDiscount
+  intent: requestDiscount
+- handler:
+    webhookHandler: requestSupervisor
+  intent: requestSupervisor
+- handler:
+    webhookHandler: whoIsBoss
+  intent: whoIsBoss
+onEnter:
+  webhookHandler: greetings

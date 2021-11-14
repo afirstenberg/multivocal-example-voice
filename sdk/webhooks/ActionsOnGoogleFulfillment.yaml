@@ -1,0 +1,9 @@
+handlers:
+- name: requestSupervisor
+- name: requestDiscount
+- name: greetings
+- name: whoIsBoss
+- name: noMatch
+httpsEndpoint:
+  baseUrl: https://example.com/webhook
+  endpointApiVersion: 2
