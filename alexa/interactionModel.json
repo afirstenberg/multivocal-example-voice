@@ -1,0 +1,60 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "multivocal example voice",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "requestDiscount",
+          "slots": [],
+          "samples": [
+            "My bill is too high",
+            "Can I get a discount",
+            "I want a discount"
+          ]
+        },
+        {
+          "name": "requestSupervisor",
+          "slots": [],
+          "samples": [
+            "Let me speak to your supervisor",
+            "Let me speak to your boss",
+            "I'd like to speak to a supervisor",
+            "Can I speak to them",
+            "I want to talk to your boss",
+            "I want to talk to your supervisor"
+          ]
+        },
+        {
+          "name": "whoIsBoss",
+          "slots": [],
+          "samples": [
+            "who is your supervisor",
+            "who is in charge",
+            "Who is your boss"
+          ]
+        }
+      ],
+      "types": []
+    }
+  }
+}

@@ -1,4 +1,6 @@
 
+require('./alexa').init();
+
 require('./voice').init();
 require('./conversation').init();
 
